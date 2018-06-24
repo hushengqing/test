@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+// 想要实现宽高自适应, 等比例缩放效果
+// 1. 使用 rem 为单位
+// 2. 动态设置 html 根字体大小
+
+// adaptor 作用: 利用媒体查询实现动态设置 html 根字体大小
+// 公式: 当前屏幕 / 设计图大小 = fontSize / 基准值
+
+//       fontSize = 当前屏幕 / @design * @base
+
+// 320px 360px 375px 384px 400px 414px 424px 480px 540px 640px 720px 750px
+
+.adaptor( @value: 320px ) {
+  @media (min-width: @value ) {
+    html {
+      font-size: @value / @design * @base;
+    }
+  }
+}
+
+.adaptor(320px);
+.adaptor(360px);
+.adaptor(375px);
+.adaptor(384px);
+.adaptor(400px);
+.adaptor(414px);
+.adaptor(424px);
+.adaptor(480px);
+.adaptor(540px);
+.adaptor(640px);
+.adaptor(720px);
+.adaptor(750px);
+
+
+
